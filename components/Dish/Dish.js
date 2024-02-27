@@ -9,6 +9,7 @@ import { endpoints } from "../../configs/API"
 import { ScrollView } from "react-native-gesture-handler"
 import { useContext } from "react"
 import CartContext from "../../configs/CartContext"
+import Category from "../Category/Category"
 
 const Dish = () => {
     const [nameKW, setNameKW] = useState('')
@@ -28,6 +29,7 @@ const Dish = () => {
                     }
                 });
                 setDishes(res.data);
+                console.log(dishes)
             } catch (ex) {
                 setDishes([]);
                 console.error(ex);
@@ -69,7 +71,7 @@ const Dish = () => {
                             </View>
                         </View>
                     ))}
-
+                <Category/>
                 </ScrollView>
             </View>
         </View>

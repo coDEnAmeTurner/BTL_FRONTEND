@@ -9,8 +9,8 @@ import { Header } from "react-native/Libraries/NewAppScreen";
 import {SocialIcon, Button} from '@rneui/themed'
 
 const Login = ({navigation}) => {
-    const [username, setUsername] = useState();
-    const [password, setPassword] = useState();
+    const [username, setUsername] = useState('shop1');
+    const [password, setPassword] = useState('123');
     const [loading, setLoading] = useState(false);
     const [user, dispatch] = useContext(MyContext);
 
@@ -21,8 +21,8 @@ const Login = ({navigation}) => {
             let res = await API.post(endpoints['login'], {
                 "username": username, 
                 "password": password,
-                "client_id": "3bmd077ldS8vHainhiS9DXLjZZtBk41bZr3G9svV",
-                "client_secret": "uw8wEzQsWnwoV6r6PlOQj52B6989cZOAv8IsOyFFuTZ0ARicLvSZTsdOehNZxjLSiAlBD4KC6YjneUdnPWm4pS1Jp48ryPz9VaPBirnDoK4bfeq6EPstx9XMoGOPv8X8",
+                "client_id": "pkVV50s8T98xPUN4cb6xeaOOEzuFXuMSom4tsLeR",
+                "client_secret": "WIfGt0iG7tzPlrXU81zZgK8UAiAhKnrNnxCkfxQNjnSbCazqkUSf6MkKsKBtYllDS1G0wCq1o5J68pHYUNAxLjkr8r6hm8OKugeY885CX7qIjiZwuwptrlRQPMWdcXVP",
                 "grant_type": "password"
             });
             console.log(res.data)
