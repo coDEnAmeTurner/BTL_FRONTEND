@@ -4,7 +4,9 @@ export const endpoints = {
     'login': '/o/token/',
     'list-shop': '/shops/list-shop/',
     'current-user': '/users/current-user',
-    'tim-kiem-dish': '/dishes/tim-kiem-dish/'
+    'tim-kiem-dish': '/dishes/tim-kiem-dish/',
+    'create-orders': (loaiThanhToan, userShop) => 
+    `/orders/?loaiThanhToan=${loaiThanhToan}&userShop=${userShop}`
 }
 
 export const authApi = (accessToken) => axios.create({
