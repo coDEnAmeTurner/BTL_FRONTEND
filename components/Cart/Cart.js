@@ -4,12 +4,15 @@ import MyContext from "../../configs/MyContext"
 import { useEffect } from "react"
 import MyStyles from "../../styles/MyStyles"
 import CartContext from "../../configs/CartContext"
+import OrderContext from "../../configs/OrderContext"
 import CartItem from "./CartItem"
 import { Button } from "react-native"
 import { Text } from "react-native"
+import Order from "../Order/Order"
 
-const Cart = () => {
+const Cart = ({navigation}) => {
     const [cartList, setCartList] = useContext(CartContext)
+    const [orderList, setOrderList] = useContext(OrderContext)
     const dishcounts = {};
 
     const renderCartList = () => {
@@ -28,7 +31,11 @@ const Cart = () => {
             <Button 
                 title="Đặt hàng"
                 onPress={() => {
-                    
+                    setOrderList({
+                        'cartList': cartList,
+                        'dishcounts': dishcounts
+                    })
+                    navigation.navigate('Order')
                 }} 
             />
 

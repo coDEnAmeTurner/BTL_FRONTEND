@@ -50,7 +50,7 @@ const Dish = () => {
             <View style={{flex: 5}}>
                 <Text style={MyStyles.subject}>KẾT QUẢ</Text>
                 <ScrollView>
-                    {dishes.map((dish, index)=>(
+                    {dishes.map((dish)=>(
                         <View key={dish.id}>
                             <View style={{flex: 1}}>
                                 <View style={{flexDirection: 'row', justifyContent: 'space-between'}}>
