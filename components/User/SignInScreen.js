@@ -21,11 +21,11 @@ const Login = ({navigation}) => {
             let res = await API.post(endpoints['login'], {
                 "username": username, 
                 "password": password,
-                "client_id": "3bmd077ldS8vHainhiS9DXLjZZtBk41bZr3G9svV",
-                "client_secret": "uw8wEzQsWnwoV6r6PlOQj52B6989cZOAv8IsOyFFuTZ0ARicLvSZTsdOehNZxjLSiAlBD4KC6YjneUdnPWm4pS1Jp48ryPz9VaPBirnDoK4bfeq6EPstx9XMoGOPv8X8",
+                "client_id": "QSi4alBkNvdTryRQ2CyybiJObqCwEej8AJ0XJz76",
+                "client_secret": "GKFUAWEeNZrRzGr5gA6WORB9vmfKwXQO3qcGPM6xS54Jn3g3bGRznQhCA52kdOXipEGMVZpAsjt8JYQrkgNhjIEsXUHLNxVb7ReDt0LL27Xt3yyA9FDRBTUTnsxTleCi",
                 "grant_type": "password"
             });
-            console.log(res.data)
+            console.log(res.data.access_token)
 
             await AsyncStorage.setItem("access-token", res.data.access_token)
             let user = await authApi(res.data.access_token).get(endpoints['current-user']);

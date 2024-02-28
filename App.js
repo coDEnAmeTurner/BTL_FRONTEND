@@ -17,8 +17,8 @@ const Drawer = createDrawerNavigator();
 
 const App = () => {
   const [orderList, setOrderList] = useState({
-    'cartList': [],
-    'dishcounts': []
+    'dishList': [],
+    'dishcounts': {}
   });
   const [cartList, setCartList] = useState([]);
   const [user, dispatch] = useReducer(MyUserReducer, {username: 'GUEST'});

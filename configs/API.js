@@ -5,8 +5,9 @@ export const endpoints = {
     'list-shop': '/shops/list-shop/',
     'current-user': '/users/current-user',
     'tim-kiem-dish': '/dishes/tim-kiem-dish/',
-    'create-orders': (loaiThanhToan, userShop) => 
-    `/orders/?loaiThanhToan=${loaiThanhToan}&userShop=${userShop}`
+    'create-orders': (loaiThanhToan, dishList, userShop) => 
+    `/orders/?loaiThanhToan=${loaiThanhToan}&${dishList.map(
+        dish => `dishId=${dish.id}&dishCount=${dish.soLuong}`).join('&')}&userShop=${userShop}`
 }
 
 export const authApi = (accessToken) => axios.create({
