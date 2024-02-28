@@ -10,6 +10,7 @@ import { ScrollView } from "react-native-gesture-handler"
 import { useContext } from "react"
 import CartContext from "../../configs/CartContext"
 import Category from "../Category/Category"
+import Menu from "../Menu/MenuForm"
 
 const Dish = () => {
     const [nameKW, setNameKW] = useState('')
@@ -72,6 +73,7 @@ const Dish = () => {
                         </View>
                     ))}
                 <Category/>
+                <Menu/>
                 </ScrollView>
             </View>
         </View>
