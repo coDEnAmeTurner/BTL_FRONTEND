@@ -24,7 +24,7 @@ const Category = () => {
             if (res.status===201) {
                 Alert.alert("THêm thành công")
             }
-            else 
+            else  
                 Alert.alert("Fail")
         } catch(ex) {
             console.log(ex)
